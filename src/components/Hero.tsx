@@ -28,15 +28,15 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="container relative z-10 px-4 py-20">
+      <div className="container relative z-10 px-4 sm:px-6 py-16 sm:py-20">
         <div className="max-w-5xl mx-auto text-center">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 mb-8 glass-effect rounded-full text-white animate-fade-in">
-            <Sparkles className="h-4 w-4 text-accent" />
-            <span className="text-sm font-medium">Надежные международные грузоперевозки</span>
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 mb-6 sm:mb-8 glass-effect rounded-full text-white animate-fade-in text-xs sm:text-sm">
+            <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 text-accent" />
+            <span className="font-medium">Надежные международные грузоперевозки</span>
           </div>
 
-          <h1 className="text-6xl md:text-8xl font-bold text-white mb-6 leading-tight animate-fade-in-up">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold text-white mb-4 sm:mb-6 leading-tight animate-fade-in-up px-2">
             Международные
             <br />
             <span className="bg-gradient-to-r from-secondary via-white to-accent bg-clip-text text-transparent">
@@ -44,23 +44,23 @@ const Hero = () => {
             </span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 mb-8 sm:mb-10 max-w-3xl mx-auto animate-fade-in px-4" style={{ animationDelay: '0.2s' }}>
             Быстрая и надежная доставка грузов из Вьетнама и Австралии в Казахстан. 
             Профессиональный сервис мирового уровня.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in" style={{ animationDelay: '0.4s' }}>
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center animate-fade-in px-4" style={{ animationDelay: '0.4s' }}>
             <Button 
               size="lg" 
-              className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-glow text-lg px-10 py-7 group hover:scale-105 transition-all duration-300 hover:shadow-[0_0_100px_hsl(var(--accent)/0.5)]"
+              className="w-full sm:w-auto bg-accent hover:bg-accent/90 text-accent-foreground shadow-glow text-base sm:text-lg px-6 sm:px-10 py-5 sm:py-7 group hover:scale-105 transition-all duration-300 hover:shadow-[0_0_100px_hsl(var(--accent)/0.5)]"
               onClick={() => scrollToSection('pricing')}
             >
               Узнать стоимость
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-2 transition-transform duration-300" />
+              <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-2 transition-transform duration-300" />
             </Button>
             <Button 
               size="lg" 
-              className="glass-effect text-white hover:bg-white/20 text-lg px-10 py-7 border-2 border-white/30 hover:border-white/50 hover:scale-105 transition-all duration-300"
+              className="w-full sm:w-auto glass-effect text-white hover:bg-white/20 text-base sm:text-lg px-6 sm:px-10 py-5 sm:py-7 border-2 border-white/30 hover:border-white/50 hover:scale-105 transition-all duration-300"
               onClick={() => scrollToSection('services')}
             >
               Наши услуги
@@ -69,8 +69,8 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Animated Scroll Indicator */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+      {/* Animated Scroll Indicator - Hidden on mobile */}
+      <div className="hidden sm:block absolute bottom-10 left-1/2 -translate-x-1/2 z-10 animate-bounce">
         <div className="w-6 h-10 border-2 border-white/60 rounded-full flex items-start justify-center p-2 backdrop-blur-sm">
           <div className="w-1.5 h-3 bg-white rounded-full animate-pulse" />
         </div>
