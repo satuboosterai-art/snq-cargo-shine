@@ -1,81 +1,148 @@
 import { Card } from "@/components/ui/card";
-import { Building2, MapPin, CreditCard } from "lucide-react";
+import { Building2, MapPin, CreditCard, Mail, Phone, MessageCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const CompanyInfo = () => {
   return (
-    <section id="contact" className="py-20 bg-muted/30">
-      <div className="container px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Контактная информация
+    <section id="contact" className="py-24 bg-gradient-to-b from-muted/20 via-background to-muted/20 relative overflow-hidden">
+      {/* Decorative elements */}
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
+      
+      <div className="container px-4 relative z-10">
+        <div className="text-center mb-20">
+          <div className="inline-block px-4 py-2 bg-primary/10 rounded-full text-primary font-semibold text-sm mb-4">
+            Свяжитесь с нами
+          </div>
+          <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
+            Контактная <span className="text-gradient">информация</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Мы всегда на связи и готовы ответить на ваши вопросы
+            Мы всегда на связи и готовы помочь с вашими грузоперевозками
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
-          <Card className="p-8 hover:shadow-elegant transition-all duration-300 hover:-translate-y-1 border-2">
-            <div className="inline-flex p-4 bg-gradient-accent rounded-full mb-6">
-              <Building2 className="h-8 w-8 text-white" />
-            </div>
-            <h3 className="text-xl font-bold mb-4">Компания</h3>
-            <div className="space-y-2 text-muted-foreground">
-              <p className="font-semibold text-foreground">ТОО "SNQ Trade"</p>
-              <p><span className="font-medium">БИН:</span> 230240001408</p>
-            </div>
-          </Card>
-
-          <Card className="p-8 hover:shadow-elegant transition-all duration-300 hover:-translate-y-1 border-2">
-            <div className="inline-flex p-4 bg-gradient-accent rounded-full mb-6">
-              <MapPin className="h-8 w-8 text-white" />
-            </div>
-            <h3 className="text-xl font-bold mb-4">Адреса</h3>
-            <div className="space-y-3 text-muted-foreground text-sm">
-              <div>
-                <p className="font-medium text-foreground mb-1">Юридический адрес:</p>
-                <p>Казахстан, г. Алматы, Ауэзовский район, Мкр1, 6 дом, 1 кв</p>
+        <div className="grid md:grid-cols-3 gap-8 mb-16">
+          <Card className="group p-10 border-2 border-transparent hover:border-primary/20 transition-all duration-500 hover-lift shadow-card bg-gradient-card relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-glow opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="relative z-10">
+              <div className="inline-flex p-5 bg-gradient-accent rounded-2xl mb-6 shadow-glow group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                <Building2 className="h-10 w-10 text-white" />
               </div>
-              <div>
-                <p className="font-medium text-foreground mb-1">Офис:</p>
-                <p>РК, г. Алматы, Ауэзовский район, ул. Кабдолова 2, 12 офис</p>
+              <h3 className="text-2xl font-bold mb-6 text-foreground">Компания</h3>
+              <div className="space-y-3 text-muted-foreground">
+                <p className="font-bold text-xl text-foreground">ТОО "SNQ Trade"</p>
+                <div className="flex items-start gap-2">
+                  <span className="font-semibold text-foreground">БИН:</span>
+                  <span>230240001408</span>
+                </div>
               </div>
             </div>
           </Card>
 
-          <Card className="p-8 hover:shadow-elegant transition-all duration-300 hover:-translate-y-1 border-2">
-            <div className="inline-flex p-4 bg-gradient-accent rounded-full mb-6">
-              <CreditCard className="h-8 w-8 text-white" />
+          <Card className="group p-10 border-2 border-transparent hover:border-secondary/20 transition-all duration-500 hover-lift shadow-card bg-gradient-card relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-glow opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="relative z-10">
+              <div className="inline-flex p-5 bg-gradient-accent rounded-2xl mb-6 shadow-glow group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                <MapPin className="h-10 w-10 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold mb-6 text-foreground">Адреса</h3>
+              <div className="space-y-4 text-muted-foreground text-sm">
+                <div>
+                  <p className="font-semibold text-foreground mb-2 flex items-center gap-2">
+                    <span className="w-2 h-2 bg-secondary rounded-full"></span>
+                    Юридический адрес:
+                  </p>
+                  <p className="ml-4">Казахстан, г. Алматы, Ауэзовский район, Мкр1, 6 дом, 1 кв</p>
+                </div>
+                <div>
+                  <p className="font-semibold text-foreground mb-2 flex items-center gap-2">
+                    <span className="w-2 h-2 bg-accent rounded-full"></span>
+                    Офис:
+                  </p>
+                  <p className="ml-4">РК, г. Алматы, Ауэзовский район, ул. Кабдолова 2, 12 офис</p>
+                </div>
+              </div>
             </div>
-            <h3 className="text-xl font-bold mb-4">Банковские реквизиты</h3>
-            <div className="space-y-2 text-muted-foreground text-sm">
-              <p><span className="font-medium text-foreground">ИИК:</span> KZ42601A861012479261</p>
-              <p><span className="font-medium text-foreground">БИК:</span> HSBKKZKX</p>
-              <p className="text-xs pt-2">АО «Народный Банк Казахстан»</p>
+          </Card>
+
+          <Card className="group p-10 border-2 border-transparent hover:border-accent/20 transition-all duration-500 hover-lift shadow-card bg-gradient-card relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-glow opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="relative z-10">
+              <div className="inline-flex p-5 bg-gradient-warm rounded-2xl mb-6 shadow-glow group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                <CreditCard className="h-10 w-10 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold mb-6 text-foreground">Реквизиты</h3>
+              <div className="space-y-3 text-muted-foreground text-sm">
+                <div className="p-3 bg-muted/50 rounded-lg">
+                  <p className="font-semibold text-foreground text-xs mb-1">ИИК</p>
+                  <p className="font-mono text-xs">KZ42601A861012479261</p>
+                </div>
+                <div className="p-3 bg-muted/50 rounded-lg">
+                  <p className="font-semibold text-foreground text-xs mb-1">БИК</p>
+                  <p className="font-mono text-xs">HSBKKZKX</p>
+                </div>
+                <p className="text-xs pt-2 text-center">АО «Народный Банк Казахстан»</p>
+              </div>
             </div>
           </Card>
         </div>
 
-        <Card className="max-w-4xl mx-auto p-10 bg-gradient-hero border-0 shadow-elegant text-center">
-          <h3 className="text-3xl font-bold text-white mb-4">
-            Готовы начать работу?
-          </h3>
-          <p className="text-white/90 text-lg mb-6 max-w-2xl mx-auto">
-            Свяжитесь с нами для получения консультации и расчета стоимости доставки вашего груза
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
-              href="tel:+77000000000" 
-              className="inline-flex items-center justify-center px-8 py-3 bg-accent hover:bg-accent/90 text-accent-foreground font-semibold rounded-lg shadow-glow transition-all hover:scale-105"
-            >
-              Позвонить
-            </a>
-            <a 
-              href="mailto:info@24ucargo.kz" 
-              className="inline-flex items-center justify-center px-8 py-3 bg-white/10 hover:bg-white hover:text-primary text-white font-semibold rounded-lg border-2 border-white backdrop-blur-sm transition-all hover:scale-105"
-            >
-              Написать
-            </a>
+        {/* CTA Card */}
+        <Card className="max-w-5xl mx-auto overflow-hidden border-0 shadow-elegant">
+          <div className="relative p-12 md:p-16 bg-gradient-hero overflow-hidden">
+            {/* Decorative elements */}
+            <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/20 rounded-full blur-3xl animate-float" />
+            <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
+            
+            <div className="relative z-10 text-center">
+              <h3 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Готовы начать сотрудничество?
+              </h3>
+              <p className="text-white/90 text-xl mb-10 max-w-3xl mx-auto leading-relaxed">
+                Свяжитесь с нами удобным способом для получения консультации и расчета стоимости доставки вашего груза
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a 
+                  href="tel:+77000000000"
+                >
+                  <Button 
+                    size="lg"
+                    className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-glow text-lg px-10 py-7 w-full sm:w-auto hover:scale-105 transition-all duration-300"
+                  >
+                    <Phone className="mr-2 h-5 w-5" />
+                    Позвонить
+                  </Button>
+                </a>
+                
+                <a 
+                  href="mailto:info@24ucargo.kz"
+                >
+                  <Button 
+                    size="lg"
+                    className="glass-effect text-white hover:bg-white/20 text-lg px-10 py-7 border-2 border-white/30 hover:border-white/50 w-full sm:w-auto hover:scale-105 transition-all duration-300"
+                  >
+                    <Mail className="mr-2 h-5 w-5" />
+                    Написать
+                  </Button>
+                </a>
+                
+                <a 
+                  href="https://wa.me/77000000000"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button 
+                    size="lg"
+                    className="glass-effect text-white hover:bg-white/20 text-lg px-10 py-7 border-2 border-white/30 hover:border-white/50 w-full sm:w-auto hover:scale-105 transition-all duration-300"
+                  >
+                    <MessageCircle className="mr-2 h-5 w-5" />
+                    WhatsApp
+                  </Button>
+                </a>
+              </div>
+            </div>
           </div>
         </Card>
       </div>

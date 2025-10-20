@@ -1,152 +1,248 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Plane, Train, Package, Clock } from "lucide-react";
+import { Plane, Train, Package, Clock, TrendingDown, Zap, Sparkles, ArrowRight } from "lucide-react";
 
 const Pricing = () => {
   return (
-    <section id="pricing" className="py-20 bg-background">
-      <div className="container px-4">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Тарифы на доставку
+    <section id="pricing" className="py-24 bg-background relative overflow-hidden">
+      {/* Decorative gradients */}
+      <div className="absolute top-1/4 left-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" />
+      
+      <div className="container px-4 relative z-10">
+        <div className="text-center mb-20 animate-fade-in">
+          <div className="inline-block px-4 py-2 bg-accent/10 rounded-full text-accent font-semibold text-sm mb-4">
+            Прозрачные цены
+          </div>
+          <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
+            Тарифы на <span className="text-gradient">доставку</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Конкурентные цены и прозрачные условия доставки
+            Конкурентные цены без скрытых платежей. Гибкая система скидок на постоянной основе.
           </p>
         </div>
 
         {/* Aviation Pricing */}
-        <div className="mb-12">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="p-3 bg-gradient-accent rounded-lg">
-              <Plane className="h-8 w-8 text-white" />
+        <div className="mb-16">
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <div className="p-4 bg-gradient-accent rounded-2xl shadow-glow animate-pulse-glow">
+              <Plane className="h-10 w-10 text-white" />
             </div>
-            <h3 className="text-3xl font-bold text-foreground">Авиаперевозки (Карго)</h3>
+            <div>
+              <h3 className="text-4xl font-bold text-foreground">Авиаперевозки</h3>
+              <p className="text-muted-foreground">Быстрая доставка карго</p>
+            </div>
           </div>
           
-          <div className="overflow-x-auto">
-            <Card className="border-2 border-secondary/20 overflow-hidden">
-              <div className="overflow-x-auto">
-                <table className="w-full">
-                  <thead className="bg-gradient-accent">
-                    <tr>
-                      <th className="px-6 py-4 text-left text-white font-semibold">Направления</th>
-                      <th className="px-6 py-4 text-center text-white font-semibold">20-50 кг</th>
-                      <th className="px-6 py-4 text-center text-white font-semibold">50-150 кг</th>
-                      <th className="px-6 py-4 text-center text-white font-semibold">150-300 кг</th>
-                      <th className="px-6 py-4 text-center text-white font-semibold">300+ кг</th>
-                      <th className="px-6 py-4 text-center text-white font-semibold">Срок доставки</th>
-                    </tr>
-                  </thead>
-                  <tbody className="bg-white">
-                    <tr className="border-b border-border hover:bg-muted/50 transition-colors">
-                      <td className="px-6 py-4 font-medium">
-                        <div className="flex items-center gap-2">
-                          <Package className="h-5 w-5 text-secondary" />
-                          <span>ВЬЕТНАМ - АЛМАТЫ (АСТАНА)</span>
+          <Card className="border-2 border-secondary/20 overflow-hidden shadow-elegant hover:shadow-glow transition-all duration-500 hover-lift bg-gradient-card">
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <thead>
+                  <tr className="bg-gradient-accent">
+                    <th className="px-8 py-5 text-left text-white font-bold text-lg">Направления</th>
+                    <th className="px-6 py-5 text-center text-white font-bold">
+                      <div className="flex flex-col items-center">
+                        <Package className="h-5 w-5 mb-1" />
+                        <span>20-50 кг</span>
+                      </div>
+                    </th>
+                    <th className="px-6 py-5 text-center text-white font-bold">
+                      <div className="flex flex-col items-center">
+                        <Package className="h-5 w-5 mb-1" />
+                        <span>50-150 кг</span>
+                      </div>
+                    </th>
+                    <th className="px-6 py-5 text-center text-white font-bold">
+                      <div className="flex flex-col items-center">
+                        <Package className="h-5 w-5 mb-1" />
+                        <span>150-300 кг</span>
+                      </div>
+                    </th>
+                    <th className="px-6 py-5 text-center text-white font-bold">
+                      <div className="flex flex-col items-center">
+                        <Package className="h-5 w-5 mb-1" />
+                        <span>300+ кг</span>
+                      </div>
+                    </th>
+                    <th className="px-6 py-5 text-center text-white font-bold">
+                      <div className="flex flex-col items-center">
+                        <Clock className="h-5 w-5 mb-1" />
+                        <span>Срок</span>
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="bg-white">
+                  <tr className="border-b-2 border-border hover:bg-secondary/5 transition-all duration-300 group">
+                    <td className="px-8 py-6 font-bold text-lg">
+                      <div className="flex items-center gap-3">
+                        <div className="p-2 bg-secondary/10 rounded-lg group-hover:scale-110 transition-transform">
+                          <Plane className="h-6 w-6 text-secondary" />
                         </div>
-                      </td>
-                      <td className="px-6 py-4 text-center font-semibold text-primary">$11,00</td>
-                      <td className="px-6 py-4 text-center font-semibold text-primary">$10,00</td>
-                      <td className="px-6 py-4 text-center font-semibold text-primary">$9,00</td>
-                      <td className="px-6 py-4 text-center font-semibold text-primary">$8,50</td>
-                      <td className="px-6 py-4 text-center">
-                        <span className="inline-flex items-center gap-1 px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm font-medium">
-                          <Clock className="h-4 w-4" />
-                          до 10 дней
-                        </span>
-                      </td>
-                    </tr>
-                    <tr className="hover:bg-muted/50 transition-colors">
-                      <td className="px-6 py-4 font-medium">
-                        <div className="flex items-center gap-2">
-                          <Package className="h-5 w-5 text-secondary" />
-                          <span>АВСТРАЛИЯ - АЛМАТЫ (АСТАНА)</span>
+                        <span>ВЬЕТНАМ → АЛМАТЫ</span>
+                      </div>
+                    </td>
+                    <td className="px-6 py-6 text-center">
+                      <div className="font-bold text-2xl text-primary">$11</div>
+                      <div className="text-xs text-muted-foreground">за кг</div>
+                    </td>
+                    <td className="px-6 py-6 text-center">
+                      <div className="font-bold text-2xl text-primary">$10</div>
+                      <div className="text-xs text-muted-foreground">за кг</div>
+                    </td>
+                    <td className="px-6 py-6 text-center">
+                      <div className="font-bold text-2xl text-primary bg-secondary/10 rounded-lg py-2">$9</div>
+                      <div className="text-xs text-secondary font-semibold mt-1 flex items-center justify-center gap-1">
+                        <TrendingDown className="h-3 w-3" />
+                        Выгодно
+                      </div>
+                    </td>
+                    <td className="px-6 py-6 text-center">
+                      <div className="font-bold text-2xl text-primary bg-accent/10 rounded-lg py-2">$8.50</div>
+                      <div className="text-xs text-accent font-semibold mt-1 flex items-center justify-center gap-1">
+                        <Zap className="h-3 w-3" />
+                        Лучшая цена
+                      </div>
+                    </td>
+                    <td className="px-6 py-6 text-center">
+                      <span className="inline-flex items-center gap-2 px-4 py-2 bg-secondary/10 text-secondary rounded-full font-bold border-2 border-secondary/20">
+                        <Clock className="h-4 w-4" />
+                        10 дней
+                      </span>
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-secondary/5 transition-all duration-300 group">
+                    <td className="px-8 py-6 font-bold text-lg">
+                      <div className="flex items-center gap-3">
+                        <div className="p-2 bg-secondary/10 rounded-lg group-hover:scale-110 transition-transform">
+                          <Plane className="h-6 w-6 text-secondary" />
                         </div>
-                      </td>
-                      <td colSpan={4} className="px-6 py-4 text-center font-medium text-muted-foreground">
-                        по запросу
-                      </td>
-                      <td className="px-6 py-4 text-center">
-                        <span className="inline-flex items-center gap-1 px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm font-medium">
-                          <Clock className="h-4 w-4" />
-                          до 10 дней
-                        </span>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </Card>
-          </div>
+                        <span>АВСТРАЛИЯ → АЛМАТЫ</span>
+                      </div>
+                    </td>
+                    <td colSpan={4} className="px-6 py-6 text-center">
+                      <div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-accent rounded-full text-white font-semibold shadow-glow">
+                        <Zap className="h-5 w-5" />
+                        Цены по запросу
+                      </div>
+                    </td>
+                    <td className="px-6 py-6 text-center">
+                      <span className="inline-flex items-center gap-2 px-4 py-2 bg-secondary/10 text-secondary rounded-full font-bold border-2 border-secondary/20">
+                        <Clock className="h-4 w-4" />
+                        10 дней
+                      </span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </Card>
         </div>
 
         {/* Railway Pricing */}
-        <div>
-          <div className="flex items-center gap-3 mb-6">
-            <div className="p-3 bg-gradient-warm rounded-lg">
-              <Train className="h-8 w-8 text-white" />
+        <div className="mb-16">
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <div className="p-4 bg-gradient-warm rounded-2xl shadow-glow animate-pulse-glow" style={{ animationDelay: '1s' }}>
+              <Train className="h-10 w-10 text-white" />
             </div>
-            <h3 className="text-3xl font-bold text-foreground">Железнодорожные перевозки (Ж/Д)</h3>
+            <div>
+              <h3 className="text-4xl font-bold text-foreground">Железнодорожные перевозки</h3>
+              <p className="text-muted-foreground">Экономичная доставка контейнерами</p>
+            </div>
           </div>
           
-          <div className="overflow-x-auto">
-            <Card className="border-2 border-accent/20 overflow-hidden">
-              <div className="overflow-x-auto">
-                <table className="w-full">
-                  <thead className="bg-gradient-warm">
-                    <tr>
-                      <th className="px-6 py-4 text-left text-white font-semibold">Направления</th>
-                      <th className="px-6 py-4 text-center text-white font-semibold">20 футов</th>
-                      <th className="px-6 py-4 text-center text-white font-semibold">40 футов</th>
-                      <th className="px-6 py-4 text-center text-white font-semibold">Срок доставки</th>
-                    </tr>
-                  </thead>
-                  <tbody className="bg-white">
-                    <tr className="hover:bg-muted/50 transition-colors">
-                      <td className="px-6 py-4 font-medium">
-                        <div className="flex items-center gap-2">
-                          <Package className="h-5 w-5 text-accent" />
-                          <span>ВЬЕТНАМ - АЛМАТЫ (АСТАНА)</span>
+          <Card className="border-2 border-accent/20 overflow-hidden shadow-elegant hover:shadow-glow transition-all duration-500 hover-lift bg-gradient-card">
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <thead>
+                  <tr className="bg-gradient-warm">
+                    <th className="px-8 py-5 text-left text-white font-bold text-lg">Направления</th>
+                    <th className="px-6 py-5 text-center text-white font-bold">
+                      <div className="flex flex-col items-center">
+                        <Package className="h-5 w-5 mb-1" />
+                        <span>20 футов</span>
+                      </div>
+                    </th>
+                    <th className="px-6 py-5 text-center text-white font-bold">
+                      <div className="flex flex-col items-center">
+                        <Package className="h-5 w-5 mb-1" />
+                        <span>40 футов</span>
+                      </div>
+                    </th>
+                    <th className="px-6 py-5 text-center text-white font-bold">
+                      <div className="flex flex-col items-center">
+                        <Clock className="h-5 w-5 mb-1" />
+                        <span>Срок</span>
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="bg-white">
+                  <tr className="hover:bg-accent/5 transition-all duration-300 group">
+                    <td className="px-8 py-6 font-bold text-lg">
+                      <div className="flex items-center gap-3">
+                        <div className="p-2 bg-accent/10 rounded-lg group-hover:scale-110 transition-transform">
+                          <Train className="h-6 w-6 text-accent" />
                         </div>
-                      </td>
-                      <td className="px-6 py-4 text-center font-semibold text-primary">$5 250,00</td>
-                      <td className="px-6 py-4 text-center font-semibold text-primary">$7 400,00</td>
-                      <td className="px-6 py-4 text-center">
-                        <span className="inline-flex items-center gap-1 px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium">
-                          <Clock className="h-4 w-4" />
-                          25-30 дней
-                        </span>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </Card>
-          </div>
-        </div>
-
-        {/* CTA */}
-        <div className="mt-12 text-center">
-          <Card className="max-w-3xl mx-auto p-8 bg-gradient-hero border-0 shadow-elegant">
-            <h4 className="text-2xl font-bold text-white mb-3">
-              Нужна индивидуальная консультация?
-            </h4>
-            <p className="text-white/90 mb-6">
-              Свяжитесь с нами для расчета стоимости доставки вашего груза
-            </p>
-            <Button 
-              size="lg" 
-              className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-glow text-lg px-8"
-              onClick={() => {
-                const element = document.getElementById('contact');
-                element?.scrollIntoView({ behavior: 'smooth' });
-              }}
-            >
-              Связаться с нами
-            </Button>
+                        <span>ВЬЕТНАМ → АЛМАТЫ</span>
+                      </div>
+                    </td>
+                    <td className="px-6 py-6 text-center">
+                      <div className="font-bold text-2xl text-primary">$5,250</div>
+                      <div className="text-xs text-muted-foreground">за контейнер</div>
+                    </td>
+                    <td className="px-6 py-6 text-center">
+                      <div className="font-bold text-2xl text-primary bg-accent/10 rounded-lg py-2">$7,400</div>
+                      <div className="text-xs text-accent font-semibold mt-1 flex items-center justify-center gap-1">
+                        <TrendingDown className="h-3 w-3" />
+                        Оптимальный
+                      </div>
+                    </td>
+                    <td className="px-6 py-6 text-center">
+                      <span className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 text-accent rounded-full font-bold border-2 border-accent/20">
+                        <Clock className="h-4 w-4" />
+                        25-30 дней
+                      </span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </Card>
         </div>
+
+        {/* CTA Card */}
+        <Card className="max-w-4xl mx-auto overflow-hidden border-0 shadow-elegant hover:shadow-glow transition-all duration-500">
+          <div className="relative p-12 bg-gradient-hero overflow-hidden">
+            {/* Decorative elements */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/20 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-accent/20 rounded-full blur-3xl" />
+            
+            <div className="relative z-10 text-center">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white text-sm mb-6">
+                <Sparkles className="h-4 w-4" />
+                <span>Индивидуальный подход</span>
+              </div>
+              <h4 className="text-4xl font-bold text-white mb-4">
+                Нужна консультация специалиста?
+              </h4>
+              <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
+                Свяжитесь с нами для расчета стоимости и получения персонального коммерческого предложения
+              </p>
+              <Button 
+                size="lg" 
+                className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-glow text-lg px-10 py-7 hover:scale-105 transition-all duration-300"
+                onClick={() => {
+                  const element = document.getElementById('contact');
+                  element?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                Связаться с нами
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </div>
+          </div>
+        </Card>
       </div>
     </section>
   );

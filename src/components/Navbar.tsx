@@ -1,9 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Plane, Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -18,18 +27,30 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm">
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      scrolled 
+        ? 'bg-white/95 backdrop-blur-xl shadow-elegant' 
+        : 'bg-white/80 backdrop-blur-md'
+    }`}>
       <div className="container px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <button 
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="flex items-center gap-2 group"
+            className="flex items-center gap-3 group"
           >
-            <div className="p-2 bg-gradient-accent rounded-lg group-hover:scale-110 transition-transform">
-              <Plane className="h-6 w-6 text-white" />
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-accent rounded-xl blur-md opacity-50 group-hover:opacity-100 transition-opacity" />
+              <div className="relative p-2.5 bg-gradient-accent rounded-xl group-hover:scale-110 transition-transform duration-300 shadow-glow">
+                <Plane className="h-6 w-6 text-white" />
+              </div>
             </div>
-            <span className="text-2xl font-bold text-primary">24ucargo</span>
+            <div>
+              <span className="text-2xl font-bold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+                24ucargo
+              </span>
+              <p className="text-xs text-muted-foreground -mt-1">ТОО "SNQ Trade"</p>
+            </div>
           </button>
 
           {/* Desktop Menu */}
@@ -38,14 +59,14 @@ const Navbar = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-foreground hover:text-secondary font-medium transition-colors relative group"
+                className="text-foreground hover:text-secondary font-semibold transition-all duration-300 relative group"
               >
                 {item.name}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-secondary group-hover:w-full transition-all duration-300" />
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-accent group-hover:w-full transition-all duration-300" />
               </button>
             ))}
             <Button 
-              className="bg-accent hover:bg-accent/90 text-accent-foreground"
+              className="bg-gradient-accent hover:opacity-90 text-white shadow-glow hover:shadow-[0_0_40px_hsl(var(--secondary)/0.5)] transition-all duration-300 hover:scale-105"
               onClick={() => scrollToSection('contact')}
             >
               Связаться
@@ -55,7 +76,7 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 text-foreground hover:text-secondary transition-colors"
+            className="md:hidden p-2.5 rounded-xl text-foreground hover:bg-secondary/10 hover:text-secondary transition-all duration-300"
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -63,19 +84,20 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden py-4 border-t animate-fade-in">
-            {navItems.map((item) => (
+          <div className="md:hidden py-6 border-t animate-fade-in bg-white/95 backdrop-blur-xl rounded-b-2xl shadow-elegant">
+            {navItems.map((item, index) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="block w-full text-left px-4 py-3 text-foreground hover:bg-muted hover:text-secondary transition-colors"
+                className="block w-full text-left px-6 py-4 text-foreground hover:bg-secondary/10 hover:text-secondary transition-all duration-300 font-medium animate-fade-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {item.name}
               </button>
             ))}
-            <div className="px-4 pt-2">
+            <div className="px-6 pt-4">
               <Button 
-                className="w-full bg-accent hover:bg-accent/90 text-accent-foreground"
+                className="w-full bg-gradient-accent hover:opacity-90 text-white shadow-glow"
                 onClick={() => scrollToSection('contact')}
               >
                 Связаться
