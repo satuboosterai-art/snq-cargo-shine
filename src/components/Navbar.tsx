@@ -44,7 +44,7 @@ const Navbar = () => {
               <img 
                 src={snqLogo} 
                 alt="SNQ Trade Logo" 
-                className="h-12 w-12 object-contain group-hover:scale-110 transition-transform duration-300"
+                className="h-16 w-16 object-contain group-hover:scale-110 transition-transform duration-300"
               />
             </div>
             <div>
