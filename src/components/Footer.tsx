@@ -10,7 +10,7 @@ const Footer = () => {
               <img 
                 src={snqLogo} 
                 alt="SNQ Trade Logo" 
-                className="h-14 w-14 object-contain"
+                className="h-20 w-20 object-contain brightness-0 invert"
               />
               <span className="text-2xl font-bold">24ucargo</span>
             </div>
