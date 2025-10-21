@@ -31,8 +31,8 @@ const Footer = () => {
             <h4 className="font-semibold mb-4">Контакты</h4>
             <ul className="space-y-2 text-sm text-primary-foreground/80">
               <li>г. Алматы, ул. Кабдолова 2, 12 офис</li>
-              <li>info@24ucargo.kz</li>
-              <li>+7 (700) 000-00-00</li>
+              <li>+7 707 505 6985</li>
+              <li>+7 707 376 4556</li>
             </ul>
           </div>
         </div>

@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Plane, Train, Package, Clock, TrendingDown, Zap, Sparkles, ArrowRight } from "lucide-react";
+import { Plane, Train, Package, Clock, TrendingDown, Zap, Sparkles, ArrowRight, MessageCircle } from "lucide-react";
 
 const Pricing = () => {
   return (
@@ -84,22 +84,22 @@ const Pricing = () => {
                       </div>
                     </td>
                     <td className="px-6 py-6 text-center">
-                      <div className="font-bold text-2xl text-primary">$11</div>
+                      <div className="font-bold text-2xl text-primary">от $11</div>
                       <div className="text-xs text-muted-foreground">за кг</div>
                     </td>
                     <td className="px-6 py-6 text-center">
-                      <div className="font-bold text-2xl text-primary">$10</div>
+                      <div className="font-bold text-2xl text-primary">от $10</div>
                       <div className="text-xs text-muted-foreground">за кг</div>
                     </td>
                     <td className="px-6 py-6 text-center">
-                      <div className="font-bold text-2xl text-primary bg-secondary/10 rounded-lg py-2">$9</div>
+                      <div className="font-bold text-2xl text-primary bg-secondary/10 rounded-lg py-2">от $9</div>
                       <div className="text-xs text-secondary font-semibold mt-1 flex items-center justify-center gap-1">
                         <TrendingDown className="h-3 w-3" />
                         Выгодно
                       </div>
                     </td>
                     <td className="px-6 py-6 text-center">
-                      <div className="font-bold text-2xl text-primary bg-accent/10 rounded-lg py-2">$8.50</div>
+                      <div className="font-bold text-2xl text-primary bg-accent/10 rounded-lg py-2">от $8.50</div>
                       <div className="text-xs text-accent font-semibold mt-1 flex items-center justify-center gap-1">
                         <Zap className="h-3 w-3" />
                         Лучшая цена
@@ -155,15 +155,15 @@ const Pricing = () => {
               <div className="grid grid-cols-2 gap-3 mb-4">
                 <div className="p-3 bg-muted/50 rounded-lg">
                   <p className="text-xs text-muted-foreground mb-1">20-50 кг</p>
-                  <p className="text-xl font-bold text-primary">$11</p>
+                  <p className="text-xl font-bold text-primary">от $11</p>
                 </div>
                 <div className="p-3 bg-muted/50 rounded-lg">
                   <p className="text-xs text-muted-foreground mb-1">50-150 кг</p>
-                  <p className="text-xl font-bold text-primary">$10</p>
+                  <p className="text-xl font-bold text-primary">от $10</p>
                 </div>
                 <div className="p-3 bg-secondary/10 rounded-lg border border-secondary/20">
                   <p className="text-xs text-muted-foreground mb-1">150-300 кг</p>
-                  <p className="text-xl font-bold text-primary">$9</p>
+                  <p className="text-xl font-bold text-primary">от $9</p>
                   <p className="text-xs text-secondary font-semibold flex items-center gap-1 mt-1">
                     <TrendingDown className="h-3 w-3" />
                     Выгодно
@@ -171,7 +171,7 @@ const Pricing = () => {
                 </div>
                 <div className="p-3 bg-accent/10 rounded-lg border border-accent/20">
                   <p className="text-xs text-muted-foreground mb-1">300+ кг</p>
-                  <p className="text-xl font-bold text-primary">$8.50</p>
+                  <p className="text-xl font-bold text-primary">от $8.50</p>
                   <p className="text-xs text-accent font-semibold flex items-center gap-1 mt-1">
                     <Zap className="h-3 w-3" />
                     Лучшая
@@ -259,11 +259,11 @@ const Pricing = () => {
                       </div>
                     </td>
                     <td className="px-6 py-6 text-center">
-                      <div className="font-bold text-2xl text-primary">$5,250</div>
+                      <div className="font-bold text-2xl text-primary">от $5,250</div>
                       <div className="text-xs text-muted-foreground">за контейнер</div>
                     </td>
                     <td className="px-6 py-6 text-center">
-                      <div className="font-bold text-2xl text-primary bg-accent/10 rounded-lg py-2">$7,400</div>
+                      <div className="font-bold text-2xl text-primary bg-accent/10 rounded-lg py-2">от $7,400</div>
                       <div className="text-xs text-accent font-semibold mt-1 flex items-center justify-center gap-1">
                         <TrendingDown className="h-3 w-3" />
                         Оптимальный
@@ -296,11 +296,11 @@ const Pricing = () => {
             <div className="grid grid-cols-2 gap-3 mb-4">
               <div className="p-3 bg-muted/50 rounded-lg">
                 <p className="text-xs text-muted-foreground mb-1">20 футов</p>
-                <p className="text-xl font-bold text-primary">$5,250</p>
+                <p className="text-xl font-bold text-primary">от $5,250</p>
               </div>
               <div className="p-3 bg-accent/10 rounded-lg border border-accent/20">
                 <p className="text-xs text-muted-foreground mb-1">40 футов</p>
-                <p className="text-xl font-bold text-primary">$7,400</p>
+                <p className="text-xl font-bold text-primary">от $7,400</p>
                 <p className="text-xs text-accent font-semibold flex items-center gap-1 mt-1">
                   <TrendingDown className="h-3 w-3" />
                   Оптимальный
@@ -333,17 +333,19 @@ const Pricing = () => {
               <p className="text-white/90 text-base sm:text-lg mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
                 Свяжитесь с нами для расчета стоимости и получения персонального коммерческого предложения
               </p>
-              <Button 
-                size="lg" 
-                className="w-full sm:w-auto bg-accent hover:bg-accent/90 text-accent-foreground shadow-glow text-base sm:text-lg px-6 sm:px-10 py-5 sm:py-7 hover:scale-105 transition-all duration-300"
-                onClick={() => {
-                  const element = document.getElementById('contact');
-                  element?.scrollIntoView({ behavior: 'smooth' });
-                }}
+              <a 
+                href="https://wa.me/77059157328?text=%D0%A1%D3%99%D0%BB%D0%B5%D0%BC%D0%B5%D1%82%D1%81%D1%96%D0%B7%D0%B1%D0%B5!%20%D0%A1%D0%B0%D0%B9%D1%82%D1%82%D0%B0%D0%BD%20%D0%B6%D0%B0%D0%B7%D1%8B%D0%BF%20%D1%82%D2%B1%D1%80%D0%BC%D1%8B%D0%BD.%20%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20www.24ucargo.com"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Связаться с нами
-                <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
-              </Button>
+                <Button 
+                  size="lg" 
+                  className="w-full sm:w-auto bg-accent hover:bg-accent/90 text-accent-foreground shadow-glow text-base sm:text-lg px-6 sm:px-10 py-5 sm:py-7 hover:scale-105 transition-all duration-300"
+                >
+                  <MessageCircle className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
+                  Узнать больше
+                </Button>
+              </a>
             </div>
           </div>
         </Card>

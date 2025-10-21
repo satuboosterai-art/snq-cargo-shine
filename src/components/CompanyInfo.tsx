@@ -46,15 +46,8 @@ const CompanyInfo = () => {
               <div className="inline-flex p-5 bg-gradient-accent rounded-2xl mb-6 shadow-glow group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
                 <MapPin className="h-10 w-10 text-white" />
               </div>
-              <h3 className="text-2xl font-bold mb-6 text-foreground">Адреса</h3>
+              <h3 className="text-2xl font-bold mb-6 text-foreground">Адрес офиса</h3>
               <div className="space-y-4 text-muted-foreground text-sm">
-                <div>
-                  <p className="font-semibold text-foreground mb-2 flex items-center gap-2">
-                    <span className="w-2 h-2 bg-secondary rounded-full"></span>
-                    Юридический адрес:
-                  </p>
-                  <p className="ml-4">Казахстан, г. Алматы, Ауэзовский район, Мкр1, 6 дом, 1 кв</p>
-                </div>
                 <div>
                   <p className="font-semibold text-foreground mb-2 flex items-center gap-2">
                     <span className="w-2 h-2 bg-accent rounded-full"></span>
@@ -105,31 +98,31 @@ const CompanyInfo = () => {
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a 
-                  href="tel:+77000000000"
+                  href="tel:+77075056985"
                 >
                   <Button 
                     size="lg"
                     className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-glow text-lg px-10 py-7 w-full sm:w-auto hover:scale-105 transition-all duration-300"
                   >
                     <Phone className="mr-2 h-5 w-5" />
-                    Позвонить
+                    +7 707 505 6985
                   </Button>
                 </a>
                 
                 <a 
-                  href="mailto:info@24ucargo.kz"
+                  href="tel:+77073764556"
                 >
                   <Button 
                     size="lg"
                     className="glass-effect text-white hover:bg-white/20 text-lg px-10 py-7 border-2 border-white/30 hover:border-white/50 w-full sm:w-auto hover:scale-105 transition-all duration-300"
                   >
-                    <Mail className="mr-2 h-5 w-5" />
-                    Написать
+                    <Phone className="mr-2 h-5 w-5" />
+                    +7 707 376 4556
                   </Button>
                 </a>
                 
                 <a 
-                  href="https://wa.me/77000000000"
+                  href="https://wa.me/77059157328?text=%D0%A1%D3%99%D0%BB%D0%B5%D0%BC%D0%B5%D1%82%D1%81%D1%96%D0%B7%D0%B1%D0%B5!%20%D0%A1%D0%B0%D0%B9%D1%82%D1%82%D0%B0%D0%BD%20%D0%B6%D0%B0%D0%B7%D1%8B%D0%BF%20%D1%82%D2%B1%D1%80%D0%BC%D1%8B%D0%BD.%20%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9F%D0%B8%D1%88%D1%83%20%D1%81%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%20www.24ucargo.com"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
