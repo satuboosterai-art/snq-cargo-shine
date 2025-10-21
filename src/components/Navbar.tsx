@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Plane, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import snqLogo from "@/assets/snq-logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -40,10 +41,11 @@ const Navbar = () => {
             className="flex items-center gap-3 group"
           >
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-accent rounded-xl blur-md opacity-50 group-hover:opacity-100 transition-opacity" />
-              <div className="relative p-2.5 bg-gradient-accent rounded-xl group-hover:scale-110 transition-transform duration-300 shadow-glow">
-                <Plane className="h-6 w-6 text-white" />
-              </div>
+              <img 
+                src={snqLogo} 
+                alt="SNQ Trade Logo" 
+                className="h-12 w-12 object-contain group-hover:scale-110 transition-transform duration-300"
+              />
             </div>
             <div>
               <span className="text-2xl font-bold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">

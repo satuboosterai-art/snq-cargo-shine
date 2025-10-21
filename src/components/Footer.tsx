@@ -1,4 +1,4 @@
-import { Plane } from "lucide-react";
+import snqLogo from "@/assets/snq-logo.png";
 
 const Footer = () => {
   return (
@@ -6,10 +6,12 @@ const Footer = () => {
       <div className="container px-4">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="p-2 bg-secondary rounded-lg">
-                <Plane className="h-6 w-6 text-secondary-foreground" />
-              </div>
+            <div className="flex items-center gap-3 mb-4">
+              <img 
+                src={snqLogo} 
+                alt="SNQ Trade Logo" 
+                className="h-10 w-10 object-contain"
+              />
               <span className="text-2xl font-bold">24ucargo</span>
             </div>
             <p className="text-primary-foreground/80 text-sm">
