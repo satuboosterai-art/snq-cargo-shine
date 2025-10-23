@@ -38,7 +38,7 @@ const Navbar = () => {
           {/* Logo */}
           <button 
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="flex items-center gap-2 group"
+            className="flex items-center gap-1 group"
           >
             <div className="relative">
               <img 
