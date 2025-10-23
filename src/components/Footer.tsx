@@ -1,4 +1,5 @@
 import snqLogo from "@/assets/snq-logo.png";
+import { Instagram } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -36,6 +37,15 @@ const Footer = () => {
               <li>+7 707 505 6985</li>
               <li>+7 707 376 4556</li>
             </ul>
+            <a 
+              href="https://www.instagram.com/24ucargo?igsh=MTJmY2Vvd2o4M3lueA%3D%3D&utm_source=qr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 mt-4 text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+            >
+              <Instagram size={20} />
+              <span className="text-sm">@24ucargo</span>
+            </a>
           </div>
         </div>
 
