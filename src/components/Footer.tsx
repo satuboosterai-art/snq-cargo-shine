@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="container px-4">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
-            <div className="flex items-center gap-3 mb-4">
+            <div className="flex items-center gap-2 mb-4">
               <img 
                 src={snqLogo} 
                 alt="SNQ Trade Logo" 
